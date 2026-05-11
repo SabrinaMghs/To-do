@@ -1,0 +1,51 @@
+<%- include('partials/header') %>
+
+<h1 class="mb-4">Listas de Tarefas</h1>
+
+<form action="/lists" method="POST" class="card p-3 mb-4 shadow-sm">
+    <div class="row g-2">
+        <div class="col-md-10">
+            <input
+                type="text"
+                name="name"
+                class="form-control"
+                placeholder="Nome da nova lista"
+                required
+            >
+        </div>
+
+        <div class="col-md-2">
+            <button class="btn btn-success w-100">
+                Criar
+            </button>
+        </div>
+    </div>
+</form>
+
+<div class="row">
+    <% lists.forEach(list => { %>
+
+        <div class="col-md-4 mb-4">
+            <div class="card shadow-sm h-100">
+                <div class="card-body">
+                    <h5 class="card-title"><%= list.name %></h5>
+
+                    <p>
+                        <strong><%= list.tasks.length %></strong>
+                        tarefas
+                    </p>
+
+                    <a
+                        href="/lists/<%= list.id %>"
+                        class="btn btn-primary"
+                    >
+                        Abrir Lista
+                    </a>
+                </div>
+            </div>
+        </div>
+
+    <% }) %>
+</div>
+
+<%- include('partials/footer') %>
