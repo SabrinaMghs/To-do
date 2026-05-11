@@ -15,7 +15,7 @@ exports.createList = (req, res) => {
 
   lists.push(newList);
 
-  res.redirect('/lists');
+  res.redirect('/app');
 };
 
 exports.getTasks = (req, res) => {
@@ -41,7 +41,7 @@ exports.addTask = (req, res) => {
     completed: false
   });
 
-  res.redirect(`/lists/${list.id}`);
+  res.redirect(`/app/${list.id}`);
 };
 
 exports.toggleTask = (req, res) => {
@@ -59,7 +59,7 @@ exports.toggleTask = (req, res) => {
 
   task.completed = !task.completed;
 
-  res.redirect(`/lists/${list.id}`);
+  res.redirect(`/app/${list.id}`);
 };
 
 exports.deleteTask = (req, res) => {
@@ -73,5 +73,33 @@ exports.deleteTask = (req, res) => {
     task => task.id != req.params.taskId
   );
 
-  res.redirect(`/lists/${list.id}`);
+  res.redirect(`/app/${list.id}`);
+};
+
+exports.editList = (req, res) => {
+
+  const list = lists.find(l => l.id == req.params.id);
+
+  if (!list) {
+    return res.send('Lista não encontrada');
+  }
+
+  list.name = req.body.name;
+
+  res.redirect('/app');
+};
+
+exports.deleteList = (req, res) => {
+
+  const index = lists.findIndex(
+    l => l.id == req.params.id
+  );
+
+  if (index === -1) {
+    return res.send('Lista não encontrada');
+  }
+
+  lists.splice(index, 1);
+
+  res.redirect('/app');
 };

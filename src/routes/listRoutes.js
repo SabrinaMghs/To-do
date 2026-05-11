@@ -15,4 +15,8 @@ router.put('/:listId/tasks/:taskId', listController.toggleTask);
 
 router.delete('/:listId/tasks/:taskId', listController.deleteTask);
 
+router.post('/:id/edit', listController.editList);
+
+router.post('/:id/delete', listController.deleteList);
+
 module.exports = router;

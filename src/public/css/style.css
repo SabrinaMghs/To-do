@@ -35,3 +35,8 @@ footer {
     text-align: center;
     color: #aaa;
 }
+.completed-task {
+    text-decoration: line-through;
+    color: #bdbdbd;
+    opacity: 0.8;
+}
