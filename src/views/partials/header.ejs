@@ -3,22 +3,32 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Todo MVC</title>
+
+    <title>B-Productive</title>
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="/css/style.css">
 </head>
 <body>
 
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+<nav class="navbar navbar-expand-lg navbar-dark border-bottom border-secondary">
     <div class="container">
-        <a class="navbar-brand" href="/">Todo MVC</a>
 
-        <div>
-            <a href="/" class="btn btn-outline-light me-2">Home</a>
-            <a href="/lists" class="btn btn-primary">Listas</a>
+        <a class="navbar-brand fw-bold" href="/app">
+            B-Productive
+        </a>
+
+        <div class="navbar-nav d-flex flex-row gap-3">
+            <a class="nav-link text-light" href="/app">
+                Todas as Listas
+            </a>
+
+            <a class="nav-link text-light" href="/app/nova-lista">
+                Nova Lista
+            </a>
         </div>
+
     </div>
 </nav>
 
-<div class="container mt-4">
+<div class="container mt-5">

@@ -1,13 +1,37 @@
 body {
-    background-color: #f5f6fa;
+    background-color: #1f242d;
+    color: white;
+    min-height: 100vh;
 }
 
-.card {
-    border: none;
-    border-radius: 12px;
+.navbar {
+    background-color: #1f242d;
 }
 
-.list-group-item {
-    border-radius: 8px !important;
-    margin-bottom: 10px;
+.card,
+.list-group-item,
+.form-control {
+    background-color: #1f242d;
+    color: white;
+    border: 1px solid #444;
+}
+
+.form-control:focus {
+    background-color: #1f242d;
+    color: white;
+    border-color: #0d6efd;
+    box-shadow: none;
+}
+
+.completed {
+    background-color: #198754 !important;
+    color: white;
+}
+
+footer {
+    position: fixed;
+    bottom: 10px;
+    width: 100%;
+    text-align: center;
+    color: #aaa;
 }
